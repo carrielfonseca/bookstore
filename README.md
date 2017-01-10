@@ -12,4 +12,6 @@ This project uses the following components: tommee as a server (extension of TOM
 
 5-) In the folder C:\apache-tomee-webprofile-1.6.0\lib, put the additional jar files found in the folder TomEELibAdditions
 
+6-) In the login landing page, type consumer for the user and concordia for the password
+
 
