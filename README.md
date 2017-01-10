@@ -10,4 +10,6 @@ This project uses the following components: tommee as a server (extension of TOM
 
 4-) In the folder C:\apache-tomee-webprofile-1.6.0\conf (or whichever version you have), there will be a file named tomee.xml. This file contains resources information, such as the username and password for mysql, the path to the database created and the id of the resource (see example file in the root folder)
 
+5-) In the folder C:\apache-tomee-webprofile-1.6.0\lib, put the additional jar files found in the folder TomEELibAdditions
+
 
