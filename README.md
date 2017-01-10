@@ -8,6 +8,6 @@ This project uses the following components: tommee as a server (extension of TOM
 
 3-) After compiling the project, open-jpa should have been added to the project by Maven. If this is not the case, manually add the jar file. It should be in the path C:\Users\Admin\.m2\repository\org\apache\openjpa\openjpa-all\2.3.0  
 
-4-) In the folder C:\apache-tomee-webprofile-1.6.0\conf (or whichever version you have), there will be a file named tomee.xml. This file contains resources information, such as the username and password for mysql, the path to the database created and the id of the resource
+4-) In the folder C:\apache-tomee-webprofile-1.6.0\conf (or whichever version you have), there will be a file named tomee.xml. This file contains resources information, such as the username and password for mysql, the path to the database created and the id of the resource (see example file in the root folder)
 
 
