@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"  
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+<title>Assignment Java 3</title>
+
+
+<h:outputStylesheet library="css" name="style.css" />    
+    
+<!--[if lt IE 9]>
+<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<!-- https://code.google.com/p/html5shiv/, if it is older than i. explorer 9, run the commented code above-->
+
+</h:head>
+
+<h:body>
+<div id="container">
+	
+	<header>
+		<h1>#{msgs.welcomeToTheBookStore}</h1>
+	</header>
+
+	<section class="section_left">
+		
+		<h2>#{msgs.genre}</h2>
+		<p>
+                <h:form>    
+		<h:selectOneMenu value="#{menu.genreChosen}" required="true" onchange="submit()">
+                    <f:selectItems value="#{menu.genreItems}"/>
+                </h:selectOneMenu>
+                </h:form>
+		</p>
+                
+	</section>
+	
+	<section class="section_middle">
+		<h2>#{msgs.title}</h2>
+		<p>
+                <h:form>
+		<h:selectOneMenu value="#{menu.bookChosen}" required="true" >
+                    <f:ajax event="change"  render = "bookimage booktitle bookauthor bookprice listofcomments" />  
+                    <f:selectItems value="#{menu.bookItems}"/>
+               </h:selectOneMenu>
+                </h:form>
+		</p>
+                
+	</section>	
+	
+	<section class="section_right">
+		<h2>#{msgs.shoppingCart}</h2>
+                <h:form>
+		<h:commandButton value="#{msgs.addToShoppingCart}" action="#{shoppingCart.addBook()}" />		
+		<h:commandButton value ="See Shopping Cart" action = "shoppingCart"/>
+                </h:form>
+	</section>	
+	
+	<article >
+           
+		<h1>#{msgs.book}</h1>
+		<p><h:graphicImage id = "bookimage" library="images" name="#{menu.getImageOfTheBook()}" width ="180" height ="256" /></p>		
+		
+		<form name="description" id="description" action="" method="post">
+		
+		<div id="title">
+               
+		<label for="title">#{msgs.title}: <h:outputText id="booktitle" value=  "#{menu.getTitleOfTheBook()}"/></label>
+		
+		</div>
+
+		<div id="author">
+		<label for="author">#{msgs.author}:<h:outputText id="bookauthor" value=  "#{menu.getAuthorOfTheBook()}"/> </label>
+		
+		</div>
+
+		<div id="price">
+		<label for="price">#{msgs.price}: <h:outputText id="bookprice" value=  "#{menu.getPriceOfTheBook()}"/></label>
+		
+		</div>		
+
+ 		<!--
+		Title: <input type="text" name="title"><br>
+		Author: <input type="text" name="author"><br>
+		Price: <input type="text" name="price">
+		-->
+		</form>		
+		
+		<h3 class="clear_fix">#{msgs.reviews}</h3>
+                <h:form>                   
+                    <h:inputTextarea  id="review" cols="100" rows="10"
+                    value = "#{menu.comment}" />                
+                <h:commandButton value="Post Comment" action="#{menu.addComment()}" >
+                   <f:ajax event="click" execute = "review"/>   
+                </h:commandButton>                 
+                </h:form>
+         
+                
+                   
+       <h:dataTable  id="listofcomments"  value="#{menu.getListOfComments()}" var="comments" >
+        <h:column>    				
+        <f:facet name="header">Comment</f:facet>    				
+        #{comments.reviewText}
+        </h:column>  
+    </h:dataTable>    
+                
+               
+
+                
+		
+		
+	</article>
+    
+    
+	
+	</div>
+</h:body>
+
+</html>

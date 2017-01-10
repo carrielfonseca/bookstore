@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html">
+    <h:head>
+        <title>login</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <h3>Please enter your name and password.</h3>   
+            <table>
+                <tr>
+                    <td>#{msgs.username}:</td>
+                    <td><h:inputText value="#{user.username}"/></td>
+                </tr>
+                <tr>
+                    <td>#{msgs.lastName}:</td>
+                    <td><h:inputText value="#{user.lastName}"/></td>
+                </tr>
+                <tr>
+                    <td>#{msgs.firstName}:</td>
+                    <td><h:inputText value="#{user.firstName}"/></td>
+                </tr>
+                <tr>
+                    <td>#{msgs.companyName}:</td>
+                    <td><h:inputText value="#{user.companyName}"/></td>
+                </tr>
+                <tr>
+                    <td>#{msgs.address1}:</td>
+                    <td><h:inputText value="#{user.address1}"/></td>
+                </tr>
+                <tr>
+                    <td>#{msgs.address2}:</td>
+                    <td><h:inputText value="#{user.address2}"/></td>
+                </tr>
+                <tr>
+                    <td>#{msgs.city}: </td>
+                    <td><h:inputText value="#{user.city}"/></td>
+                </tr>
+                <tr>
+                    <td>#{msgs.province}:</td>
+                    <td><h:inputText value="#{user.province}"/></td>
+                </tr>
+                <tr>
+                    <td>#{msgs.postalCode}:</td>
+                    <td><h:inputText value="#{user.postalCode}"/></td>
+                </tr>
+                <tr>
+                    <td>#{msgs.homeTelephone}:</td>
+                    <td><h:inputText value="#{user.homeTelephone}"/></td>
+                </tr>
+                <tr>
+                    <td>#{msgs.cellPhone}:</td>
+                    <td><h:inputText value="#{user.cellPhone}"/></td>
+                </tr>
+                <tr>
+                    <td>#{msgs.email}:</td>
+                    <td><h:inputText value="#{user.email}"/></td>
+                </tr>
+                <tr>
+                    <td>#{msgs.password}:</td>
+                    <td><h:inputSecret value="#{user.password}"/></td>
+                </tr>
+            </table>                    
+            <p><h:commandButton value="#{msgs.createAccount}" action="#{registerClient.registerClient()}"/></p>
+            
+            
+            
+        </h:form>
+    </h:body>
+</html>
+
